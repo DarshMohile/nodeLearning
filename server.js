@@ -23,5 +23,5 @@ app.get('/', (req, res) => {
 app.use('/', userRoutes);
 
 
-
+//initiate server on port 3000
 app.listen(3000);
