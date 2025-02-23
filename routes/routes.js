@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../dataModels/user');
 
-var userQuery = 'ZK';
+var userQuery;
 
 
 // Function to accept the data from user and create a new account by storing the data to DB
