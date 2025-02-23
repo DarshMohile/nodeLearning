@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const dbUrl = 'mongodb://localhost:27017/testdb'
+const dbUrl = process.env.MONGO_LOCAL_URL;
 
 console.log('\n::Establishing connection to database server...\n');
 
