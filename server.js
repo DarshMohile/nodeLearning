@@ -19,7 +19,7 @@ console.log('::Server is live.\n')
 // Home of server which indicates that server is online and working
 app.get('/', (req, res) => {
 
-    res.send('<h2>Server is Online.</h2> <br> <h3>Darsh is lazy. Pls wait till he properly sets up the database and frontend</h3> <br> (^w^)');
+    res.send('<h2>Server is Online.</h2> <br> <h3>Darsh is lazy. Pls wait till he properly sets up the database and frontend</h3> <br> <h3>(^w^)</h3>');
 })
 
 //Use the endpoints defined in routes.js
