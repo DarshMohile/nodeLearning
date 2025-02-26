@@ -39,6 +39,7 @@ function App() {
               placeholder="Enter your password"
             />
           </div>
+
           <button type="submit" className="btn">LOGIN</button>
         </form>
       </div>

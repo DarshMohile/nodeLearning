@@ -33,7 +33,13 @@ const userSchema = new mongoose.Schema({
     {
         type: String,
         required: true  
-    }
+    },
+
+   /*role:
+    {
+        enum: ['student', 'faculty'],
+        required: true
+    }*/
 })
 
 // Create a model of user

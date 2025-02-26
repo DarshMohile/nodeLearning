@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../dataModels/user');
+const User = require('../dataModels/student');
 
 var userQuery;
 
@@ -30,10 +30,12 @@ router.post('/signup', async (req, res) => {
 
 
 // Function to find and send the data to user. In this case, whose username is 'JV'
-router.get('/show', async (req, res) => {
+router.get('/show/:name', async (req, res) => {
 
     try
     {
+        userQuery = req.params.name;
+        console.log(userQuery);
         const data = await User.find({ username: { $eq: userQuery }});
         console.log('::Fetching data\n');
         res.status(200).json(data);
