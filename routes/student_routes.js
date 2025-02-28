@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../dataModels/student');
+const passport = require('passport');
 
 var userQuery;
 
@@ -29,7 +30,7 @@ router.post('/signup', async (req, res) => {
 });
 
 
-// Function to find and send the data to user. In this case, whose username is 'JV'
+// Function to find and send the data to user. In this case, whose username is in login page
 router.get('/show/:name', async (req, res) => {
 
     try
@@ -106,6 +107,19 @@ router.delete('/delete/:id', async (req, res) => {
         console.log('::Error accessing the data from database: ' + err + '\n');
         res.status(500).json({error : 'Internal Server Error.'});
     }
+})
+
+router.get('/dashboard', passport.authenticate('local', {session: false}), (req, res) => {
+
+    try
+    {
+        res.send('<body bgcolor = "black"><font color = "white"> <h2>Welcome to Dashboard!</h2> <br> <h3>You are authenticated with correct username and password.</h3></font></body>');
+    }
+    catch(err)
+    {
+        res.send(err);
+    }
+
 })
 
 
